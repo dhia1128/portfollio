@@ -1,0 +1,39 @@
+---
+title: "AI Document Q&A"
+summary: "A private document question-answering app built with FastAPI, PostgreSQL, and a local Ollama model."
+showImagesInList: true
+images:
+  - "/images/projects/portfolio/local-document-analyzer.webp"
+---
+
+## Overview
+
+Built a browser-based application for asking natural-language questions about uploaded TXT, PDF, and DOCX documents. Documents are extracted, split into chunks, and stored in PostgreSQL; relevant document context is sent to a locally hosted Ollama model to generate answers without a paid API key.
+
+## Demo
+
+<video
+  controls
+  playsInline
+  preload="metadata"
+  aria-label="AI Document Q&A application demo"
+  style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: "12px", backgroundColor: "#111" }}
+>
+  <source src="/api/project-demo" type="video/mp4" />
+  Your browser does not support embedded videos.
+</video>
+
+## How it works
+
+1. Upload a document through the browser interface.
+2. Extract its text and store document metadata and content chunks in PostgreSQL.
+3. Ask a question about the uploaded content.
+4. Send document context to Ollama and return a locally generated answer.
+
+## Technologies
+
+FastAPI, Python, PostgreSQL, SQLAlchemy, Ollama, HTML, and JavaScript.
+
+## API
+
+The application provides health checks, document listing and upload, and a question-answering endpoint. FastAPI Swagger UI is available for testing the API.
