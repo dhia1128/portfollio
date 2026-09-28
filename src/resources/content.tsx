@@ -8,7 +8,6 @@ const person: Person = {
   avatar: "/images/profile/dhia-eddine-arfaoui.webp",
   email: "dhiaarfaoui32@gmail.com",
   location: "Africa/Tunis",
-  locationLabel: "Ariana, Tunisia",
   locale: "en",
 };
 
