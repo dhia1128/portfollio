@@ -6,9 +6,10 @@ interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
   hideImages?: boolean;
+  hideImagesFor?: string[];
 }
 
-export function Projects({ range, exclude, hideImages }: ProjectsProps) {
+export function Projects({ range, exclude, hideImages, hideImagesFor }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   // Exclude by slug (exact match)
@@ -34,7 +35,13 @@ export function Projects({ range, exclude, hideImages }: ProjectsProps) {
           priority={index < 2}
           key={post.slug}
           href={`/work/${post.slug}`}
-          images={hideImages || post.metadata.showImagesInList === false ? [] : post.metadata.images}
+          images={
+            hideImages ||
+            hideImagesFor?.includes(post.slug) ||
+            post.metadata.showImagesInList === false
+              ? []
+              : post.metadata.images
+          }
           title={post.metadata.title}
           description={post.metadata.summary}
           content={post.content}
