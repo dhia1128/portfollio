@@ -1,4 +1,13 @@
 import mdx from "@next/mdx";
+import fs from "node:fs";
+
+const exampleEnv = fs.readFileSync(".env.example", "utf8");
+const dataReportUrl = exampleEnv
+  .split(/\r?\n/)
+  .find((line) => line.startsWith("datareportanalyserproject="))
+  ?.slice("datareportanalyserproject=".length)
+  .trim()
+  .replace(/^(["'])(.*)\1$/, "$2");
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -9,6 +18,9 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
+  env: {
+    datareportanalyserproject: dataReportUrl ?? "",
+  },
   images: {
     remotePatterns: [
       {

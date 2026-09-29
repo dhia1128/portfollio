@@ -170,6 +170,21 @@ function createHR() {
   );
 }
 
+function DataReportDemo() {
+  return (
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      aria-label="Data Report Analyzer application demo"
+      style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: "12px", backgroundColor: "#111" }}
+    >
+      <source src={process.env.datareportanalyserproject || ""} type="video/mp4" />
+      Your browser does not support embedded videos.
+    </video>
+  );
+}
+
 const components = {
   p: createParagraph as any,
   h1: createHeading("h1") as any,
@@ -186,6 +201,7 @@ const components = {
   ul: createList("ul") as any,
   li: createListItem as any,
   hr: createHR as any,
+  DataReportDemo,
   Heading,
   Text,
   CodeBlock,

@@ -1,0 +1,54 @@
+---
+title: "Data Report Analyzer"
+publishedAt: "2026-09-29"
+summary: "A CSV analysis app that profiles columns, computes statistics, and generates narrative reports with a local Ollama model."
+linkEnv: "datareportanalyserproject"
+---
+
+## Overview
+
+Data Report Analyzer turns an uploaded CSV into a structured report. It identifies column roles, calculates relevant statistics, asks a locally hosted Ollama model to write a narrative, and stores the dataset and report in a database.
+
+## Demo
+
+<DataReportDemo />
+
+## Analysis workflow
+
+1. Upload a CSV file through the web interface or the reports API.
+2. Profile the data, detecting numeric, date, categorical, text, and identifier columns.
+3. Compute statistics and available analyses, including time series, category breakdowns, correlations, outliers, and data-quality warnings.
+4. Generate a Markdown summary with Ollama and save the report.
+
+The analyzer handles values such as `"1,200 DT"` as numbers and recognizes date strings. It selects likely measures and date columns by name when possible, and chooses a time-series interval based on date gaps. Summaries are written in French by default; `REPORT_LANGUAGE` can select another language. A report can be regenerated with the current model and language settings.
+
+## API
+
+The API supports report creation from a file upload, report listing and details, summary regeneration, and deletion. Interactive API documentation is available at `/docs`.
+
+## Technologies
+
+Python, FastAPI, pandas, SQLAlchemy, SQLite, LangChain, and Ollama. PostgreSQL can be used by setting `DATABASE_URL`.
+
+## Run locally
+
+Create and activate a virtual environment, install dependencies, pull the default model, and start the server:
+
+```bash
+python -m venv .venv
+```
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+ollama pull llama3.2:latest
+uvicorn app.main:app --reload
+```
+
+Ollama must be running to generate summaries. Start it separately with `ollama serve` if it is not already running. The web interface is available at `http://127.0.0.1:8000`.
+
+## Notes
+
+Analysis runs in the request, so large files or slow models may need background processing. Decimal commas are currently interpreted as thousands separators, and authentication should be added before exposing the app publicly.

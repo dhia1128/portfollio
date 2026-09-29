@@ -50,7 +50,10 @@ function readMDXFile(filePath: string) {
     showImagesInList: data.showImagesInList,
     tag: data.tag || [],
     team: data.team || [],
-    link: data.link || "",
+    link:
+      data.link ||
+      (data.linkEnv === "datareportanalyserproject" ? process.env.datareportanalyserproject : "") ||
+      "",
   };
 
   return { metadata, content };

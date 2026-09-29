@@ -4,7 +4,7 @@ const person: Person = {
   firstName: "Dhia Eddine",
   lastName: "Arfaoui",
   name: "Dhia Eddine Arfaoui",
-  role: "Machine Learning Engineer",
+  role: "Big Data and Artificial Intelligence Engineer",
   avatar: "/images/profile/dhia-eddine-arfaoui.webp",
   email: "dhiaarfaoui32@gmail.com",
   location: "Africa/Tunis",
