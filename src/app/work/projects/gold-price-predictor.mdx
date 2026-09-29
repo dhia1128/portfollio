@@ -1,0 +1,73 @@
+---
+title: "Gold Price Predictor"
+publishedAt: "2026-09-29"
+summary: "A Streamlit app that predicts gold prices from macroeconomic indicators using a Random Forest regressor."
+showImagesInList: true
+images:
+  - "/images/projects/portfolio/gold-price-predictor.png"
+---
+
+## Overview
+
+This project is a Streamlit application that predicts the gold price (`Prix Or`) from four economic indicators using a pre-trained Random Forest regression model. It provides a lightweight interactive interface for entering market variables and receiving a forecasted gold price.
+
+## Demo
+
+<video
+  controls
+  playsInline
+  preload="metadata"
+  aria-label="Gold Price Predictor application demo"
+  style={{ width: "100%", aspectRatio: "16 / 9", borderRadius: "12px", backgroundColor: "#111" }}
+>
+  <source
+    src="https://res.cloudinary.com/pap2diqo/video/upload/v1790685563/Enregistrement_de_l_%C3%A9cran_2026-09-29_133235.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support embedded videos.
+</video>
+
+## Model and performance
+
+The saved model and scaler were evaluated on the cleaned monthly dataset spanning 2016–2023.
+
+- Model: `RandomForestRegressor` with 100 trees
+- Features:
+  - `PrixArgent` (silver price)
+  - `Réserve extérieur` (external reserves)
+  - `Prix Gaz naturel` (natural gas price)
+  - `Indice des prix à la consommation` (consumer price index)
+
+| Metric | Result |
+| --- | ---: |
+| Mean absolute error (MAE) | 19.41 |
+| Root mean squared error (RMSE) | 29.31 |
+| R-squared ($R^2$) | 0.9944 (99.44%) |
+
+> These results are dataset-wide scores based on the same data used for model fitting, so they should be interpreted as in-sample performance rather than guaranteed future accuracy.
+
+## How it works
+
+1. The user enters the four economic indicators in the Streamlit interface.
+2. The saved scaler transforms the inputs before prediction.
+3. The trained Random Forest model estimates the expected gold price.
+4. The output appears directly in the app for quick exploration and decision support.
+
+## Technologies
+
+Python, Streamlit, pandas, scikit-learn, joblib.
+
+## Run locally
+
+```bash
+python -m pip install streamlit pandas joblib scikit-learn==1.6.1
+streamlit run app.py
+```
+
+## Project files
+
+- `app.py`: Streamlit interface and prediction logic.
+- `clean_data.csv`: cleaned historical data used for model evaluation.
+- `gold_random_forest_model.pkl`: trained Random Forest model.
+- `gold_scaler.pkl`: fitted feature scaler.
+- `pepite-d-or.jpg`: image used in the app.
