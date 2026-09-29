@@ -178,6 +178,16 @@ const about: About = {
           </>
         ),
       },
+      {
+        name: "IPEIM – Institut Préparatoire aux Études d’Ingénieurs El Manar",
+        logo: "/images/studies/ipeim.png",
+        description: (
+          <>
+            Preparatory engineering studies at El Manar, focused on mathematics, physics, and
+            intensive preparation for engineering school admission.
+          </>
+        ),
+      },
     ],
   },
   certifications: {
