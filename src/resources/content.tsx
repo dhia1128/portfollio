@@ -146,9 +146,8 @@ const about: About = {
         achievements: [
           <>Developed a Flask API for stochastic analysis of bonus-malus insurance classes.</>,
           <>
-            Prepared insurance datasets for analysis and feature engineering, and built an internal
-            web interface with HTML, CSS, JavaScript, and Bootstrap.
-          </>,
+            Prepared insurance datasets for analysis and feature engineering, and built an exploratory data analysis to understand the provenance of each class between 2023 and 2025.
+                </>,
         ],
         images: [],
       },

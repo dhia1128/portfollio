@@ -48,10 +48,10 @@
   justify-self: start;
   min-height: 2.75rem;
   padding: 0.65rem 1rem;
-  border: 1px solid currentColor;
+  border: 1px solid var(--brand-background-strong);
   border-radius: 4px;
-  background: currentColor;
-  color: Canvas;
+  background: var(--brand-background-strong);
+  color: var(--brand-on-background-strong);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
