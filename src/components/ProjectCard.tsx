@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
@@ -17,6 +18,7 @@ interface ProjectCardProps {
   title: string;
   content: string;
   description: string;
+  technologies: string[];
   avatars: { src: string }[];
   link: string;
 }
@@ -27,6 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   content,
   description,
+  technologies,
   avatars,
   link,
 }) => {
@@ -54,13 +57,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        {(avatars?.length > 0 || description?.trim() || content?.trim() || technologies?.length > 0) && (
           <Column flex={7} gap="16">
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
               <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
                 {description}
               </Text>
+            )}
+            {technologies?.length > 0 && (
+              <Column gap="8">
+                <Text variant="label-strong-s" onBackground="neutral-weak">
+                  Technologies used
+                </Text>
+                <Flex gap="8" wrap>
+                  {technologies.map((technology, index) => (
+                    <Text
+                      key={technology}
+                      className={styles.technologyTag}
+                      style={{ animationDelay: `${index * -0.18}s` }}
+                      variant="body-default-xs"
+                    >
+                      {technology}
+                    </Text>
+                  ))}
+                </Flex>
+              </Column>
             )}
             <Flex gap="24" wrap>
               {content?.trim() && (

@@ -1,0 +1,35 @@
+.technologyTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid var(--neutral-border-weak);
+  border-radius: 4px;
+  color: var(--neutral-on-background-weak);
+  white-space: nowrap;
+  animation: technologyOrbit 4.8s ease-in-out infinite;
+}
+
+@keyframes technologyOrbit {
+  0%,
+  100% {
+    transform: translate(0, -2px);
+  }
+
+  25% {
+    transform: translate(2px, 0);
+  }
+
+  50% {
+    transform: translate(0, 2px);
+  }
+
+  75% {
+    transform: translate(-2px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technologyTag {
+    animation: none;
+  }
+}
