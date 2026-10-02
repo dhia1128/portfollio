@@ -118,6 +118,13 @@ export default async function Project({
           </Text>
         </Row>
       </Row>
+      {post.metadata.githubLink && (
+        <Flex horizontal="center">
+          <SmartLink href={post.metadata.githubLink} suffixIcon="arrowUpRightFromSquare">
+            <Text variant="body-default-s">View source on GitHub</Text>
+          </SmartLink>
+        </Flex>
+      )}
       {post.metadata.images.length > 0 && (
         <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
       )}

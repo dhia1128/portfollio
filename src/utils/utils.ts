@@ -21,6 +21,7 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  githubLink?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -52,10 +53,8 @@ function readMDXFile(filePath: string) {
     showImagesInList: data.showImagesInList,
     tag: data.tag || [],
     team: data.team || [],
-    link:
-      data.link ||
-      (data.linkEnv === "datareportanalyserproject" ? process.env.datareportanalyserproject : "") ||
-      "",
+    link: data.link || (data.linkEnv ? process.env[data.linkEnv] : "") || "",
+    githubLink: data.githubLink || (data.githubLinkEnv ? process.env[data.githubLinkEnv] : "") || "",
   };
 
   return { metadata, content };

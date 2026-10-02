@@ -1,0 +1,41 @@
+---
+title: "Detecting Pneumonia in X-Ray Images"
+summary: "A deep learning project comparing VGG16 and InceptionV3 transfer-learning models to classify chest X-ray images as NORMAL or PNEUMONIA."
+technologies: [Python, TensorFlow, Keras, VGG16, InceptionV3, OpenCV, scikit-image, scikit-learn, imbalanced-learn, NumPy, Pandas, Matplotlib, Seaborn]
+images: ["/images/projects/portfolio/xraypneumoniadetection.png"]
+link: "https://www.kaggle.com/code/dhiaarfaoui/detecting-pneumonia-in-x-ray-images"
+---
+
+## Overview
+
+This project explores transfer learning for classifying chest X-ray images into two categories: `NORMAL` and `PNEUMONIA`. It uses pre-trained convolutional neural networks as feature extractors and compares VGG16 with InceptionV3.
+
+The dataset is the [Chest X-Ray Images (Pneumonia) dataset on Kaggle](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia). The training split is imbalanced, with more pneumonia examples than normal examples.
+
+> This is an educational machine-learning project, not a medical device. Its predictions are not suitable for diagnosis or treatment decisions.
+
+## Workflow
+
+1. Load and inspect the chest X-ray images and their class labels.
+2. Resize images to `150 × 150` pixels with three channels and normalize pixel values.
+3. Explore class distribution, sample images, and pixel-intensity histograms.
+4. Establish a transfer-learning baseline using VGG16.
+5. Apply `RandomUnderSampler` to the training data to reduce class imbalance.
+6. Train and evaluate VGG16 and InceptionV3 on the undersampled data.
+7. Review model performance with classification reports and confusion matrices.
+
+## Models
+
+- **VGG16** — ImageNet-pretrained convolutional base with custom classification layers for the two X-ray classes.
+- **InceptionV3** — An alternative ImageNet-pretrained architecture used for comparison.
+
+## Techniques and tools
+
+- **Deep learning:** TensorFlow, Keras, transfer learning, VGG16, and InceptionV3.
+- **Image processing:** OpenCV and scikit-image for image loading, resizing, and preprocessing.
+- **Data preparation and evaluation:** NumPy, Pandas, scikit-learn, and imbalanced-learn, including `RandomUnderSampler`, classification reports, and confusion matrices.
+- **Visualization:** Matplotlib and Seaborn for class distributions, sample images, histograms, and learning curves.
+
+## Scope and limitations
+
+Undersampling reduces the number of examples in the majority class during training; it does not make a model clinically reliable or eliminate other sources of bias. Performance depends on the dataset, split, preprocessing, and evaluation protocol. No clinical validation or performance metrics are provided here.

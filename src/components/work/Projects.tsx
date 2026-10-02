@@ -48,6 +48,7 @@ export function Projects({ range, exclude, hideImages, hideImagesFor }: Projects
           content={post.content}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
+          githubLink={post.metadata.githubLink || ""}
         />
       ))}
     </Column>
