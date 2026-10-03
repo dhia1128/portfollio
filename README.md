@@ -13,7 +13,7 @@ Built with Next.js, React, TypeScript, MDX, and Once UI.
 ## Selected projects
 
 - **AI Document Q&A** — Private document question-answering with FastAPI, PostgreSQL, SQLAlchemy, and a locally hosted Ollama model.
-- **Neural Conversational AI with LSTM** — An encoder-decoder chatbot using embeddings, attention, training controls, and beam-search decoding.
+- **Breast Cancer Prediction Project** — Classification of malignant versus benign diagnoses from clinical cell-nuclei features using scikit-learn models.
 
 Project descriptions are maintained as MDX files in `src/app/work/projects/`, with images stored under `public/images/`.
 

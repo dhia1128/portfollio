@@ -30,9 +30,8 @@ export function Projects({ range, exclude, hideImages, hideImagesFor }: Projects
 
   return (
     <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
-      {displayedProjects.map((post, index) => (
+      {displayedProjects.map((post) => (
         <ProjectCard
-          priority={index < 2}
           key={post.slug}
           href={`/work/${post.slug}`}
           images={

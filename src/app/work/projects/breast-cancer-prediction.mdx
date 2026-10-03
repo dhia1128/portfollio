@@ -1,0 +1,38 @@
+---
+title: "Breast Cancer Prediction Project"
+summary: "A machine-learning project comparing classifiers to predict malignant or benign breast cancer diagnoses from clinical cell-nuclei features."
+technologies: [Python, pandas, NumPy, scikit-learn, Matplotlib, Seaborn, Plotly]
+link: "https://colab.research.google.com/drive/1k84vVJCOYAZ_VY65ZLP93J0TH1b52nxn"
+---
+
+## Overview
+
+This project uses clinical features computed from cell nuclei images to explore classification of breast cancer diagnoses as malignant or benign, using the Wisconsin Breast Cancer Dataset.
+
+> This is an educational machine-learning project, not a medical device. Its predictions are not suitable for diagnosis or treatment decisions.
+
+## Google Colab notebook
+
+[Open the project notebook in Google Colab](https://colab.research.google.com/drive/1k84vVJCOYAZ_VY65ZLP93J0TH1b52nxn).
+
+## Workflow
+
+1. Load the Wisconsin Breast Cancer Dataset, clean missing or unnecessary columns, and encode the target labels.
+2. Explore class distributions, pairwise feature relationships, and correlations.
+3. Use selected clinical features for modeling: `radius_mean`, `perimeter_mean`, `area_mean`, `symmetry_mean`, `compactness_mean`, and `concave points_mean`.
+4. Compare Logistic Regression, Random Forest, Decision Tree, and Support Vector Machine classifiers.
+5. Tune model parameters with `GridSearchCV` to optimize prediction scores.
+6. Review model serialization options for downstream integration.
+
+## Technical stack
+
+- **Data processing:** pandas and NumPy for data parsing, cleaning, and numerical computations.
+- **Preprocessing:** scikit-learn `StandardScaler` and `LabelEncoder`.
+- **Model selection and validation:** `train_test_split`, `KFold`, `GridSearchCV`, and `cross_validate`.
+- **Classifiers:** `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`, `SVC`, and `KNeighborsClassifier`.
+- **Metrics:** accuracy, confusion matrices, classification reports, and F1 scores.
+- **Visualization:** Matplotlib and Seaborn for plots, pairplots, heatmaps, and countplots; Plotly for interactive charts.
+
+## Scope and limitations
+
+This project describes an exploratory classification workflow. It does not provide clinical validation or establish that the models are reliable for real-world screening or diagnosis.

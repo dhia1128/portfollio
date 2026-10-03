@@ -13,7 +13,6 @@ import styles from "./ProjectCard.module.scss";
 
 interface ProjectCardProps {
   href: string;
-  priority?: boolean;
   images: string[];
   title: string;
   content: string;
@@ -59,7 +58,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim() || technologies?.length > 0) && (
+        {(avatars?.length > 0 ||
+          description?.trim() ||
+          content?.trim() ||
+          technologies?.length > 0 ||
+          link ||
+          githubLink) && (
           <Column flex={7} gap="16">
             {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
             {description?.trim() && (
