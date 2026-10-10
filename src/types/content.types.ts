@@ -203,6 +203,8 @@ export interface About extends BasePageConfig {
       details: string;
       /** Certificate image path */
       image?: string;
+      /** Public URL for the certificate document */
+      certificateUrl?: string;
     }>;
   };
   /** Technical skills section */

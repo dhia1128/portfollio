@@ -339,6 +339,14 @@ export default function About() {
                         }}
                       />
                     )}
+                    {certification.certificateUrl && (
+                      <Button
+                        href={certification.certificateUrl}
+                        label="View certificate"
+                        size="s"
+                        variant="secondary"
+                      />
+                    )}
                   </Column>
                 ))}
               </Column>

@@ -35,10 +35,11 @@ npm run start
 
 ## Customize
 
-- `src/resources/content.tsx` — Personal details, page content, and social links
+- `src/resources/content.tsx` — Personal details, page content, certifications, and social links
 - `src/resources/once-ui.config.ts` — Routes, theme, fonts, and site configuration
 - `src/app/work/projects/*.mdx` — Project case studies
 - `public/images/` — Portfolio images and other static assets
+- `public/certifications/` — Public certificate documents linked from the About page
 
 The site URL can be set with `NEXT_PUBLIC_BASE_URL`; it defaults to `http://localhost:3000`. Blog and gallery routes are currently disabled in `src/resources/once-ui.config.ts`.
 

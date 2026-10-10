@@ -208,6 +208,13 @@ const about: About = {
         details: "365 DataScience · March 21, 2026 · Credential ID: CC-C63EF92B4C",
         image: "/images/certifications/deep-learning-with-tensorflow-2.webp",
       },
+      {
+        name: "Oracle Certified Foundations Associate",
+        details:
+          "Oracle · Agentic AI Certified Foundations Associate · October 10, 2026 · Valid through October 10, 2028",
+        image: "/images/certifications/oracle-agentic-ai-foundations-associate.png",
+        certificateUrl: "/certifications/oracle-agentic-ai-foundations-associate.pdf",
+      },
     ],
   },
   technical: {
