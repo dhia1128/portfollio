@@ -85,7 +85,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.name} is a {person.role.toLowerCase()} based in Ariana, Tunisia, with internship
+        {person.name} is a {person.role.toLowerCase()} , with internship
         experience in banking and insurance. He builds predictive models, data pipelines, and APIs
         for forecasting, anomaly detection, and risk analytics, turning complex business needs into
         practical AI systems.
